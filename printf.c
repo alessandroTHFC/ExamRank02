@@ -71,7 +71,6 @@ int	isInt(int i)
 	{
 		i *= -1;
 		count += putChar('-');
-		if (i < 0)
 	}
 	count += putNbr(i, 10);
 	return (count);
@@ -79,16 +78,15 @@ int	isInt(int i)
 
 int	putNbr(unsigned int i, int base)
 {
-	char	*hex = "0123456789abcdef";
-	char	*dec = "0123456789";
+	char	*arr = "0123456789abcdef";
 	int		count = 0;
 	int		n;
 	if (i / base != 0)
 		count += putNbr(i / base, base);
 	n = i % base;
 	if (base == 16)
-		count += write(1, &hex[n], 1);
+		count += write(1, &arr[n], 1);
 	else if (base == 10)
-		count += write(1, &dec[n], 1);
+		count += write(1, &arr[n], 1);
 	return (count);	
 }
