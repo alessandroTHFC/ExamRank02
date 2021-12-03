@@ -51,7 +51,7 @@ int	hasNL(char *s)
 			return(0);
 		i++;
 	}
-	return(0);
+	return(1);
 }
 
 void	toZero(char *str, int len)
