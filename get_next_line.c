@@ -90,6 +90,7 @@ static char readAppend(int fd, char *buffer, char leftovers)
 			return(NULL);
 		if(bytesRd == 0)
 			break ;
+		buffer[bytesRd] = '\0';
 		if(!leftovers)
 			leftovers = strDup(" ");
 		temp = leftovers;
